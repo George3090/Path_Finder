@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="styles/style.css"/>
+    <link rel="stylesheet" href="styles/mdb.min.css" />
+    <script defer type="text/javascript" src="script/mdb.min.js"></script>
+    <script defer type="text/javascript" src="script/node.js"></script>
+    <script defer type="text/javascript" src="script/grid.js"></script>
+    <script defer type="text/javascript" src="script/bfs.js"></script>
+    <script defer type="text/javascript" src="script/dfs.js"></script>
+    <script defer type="text/javascript" src="script/dijkstra.js"></script>
+    <script defer type="text/javascript" src="script/astar.js"></script>
+    <script defer type="text/javascript" src="script/bidirectional.js"></script>
+    <script defer type="text/javascript" src="script/greedybest.js"></script>
+    <script defer type="text/javascript" src="script/common.js"></script>
+    <script defer type="text/javascript" src="script/primmazegenerator.js"></script>
+    <script defer type="text/javascript" src="script/recursivebacktracker.js"></script>
+    <script defer type="text/javascript" src="script/app.js"></script>
+
+
+
+  </head>
+
+  <body>
+            <header>
+                <nav class="buttons-container navbar navbar-expand-lg navbar-dark bg-dark">
+                <!-- Container wrapper -->
+                <div class="container">
+                  <!-- Navbar brand -->
+                  <div class="image">
+                    <img  class="d-inline-block align top" width="100%" src="img/Path Finder-1.jpg" class="img-fluid" alt="">
+                </div>
+                  <!-- Toggle button -->
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="navbar-toggler-icon" id="breakpoint-toggler"></span>
+                  </button>
+
+                  <!-- Collapsible wrapper -->
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left links -->
+                    <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+
+                      <!-- Navbar dropdown -->
+                      <div class="btn-group shadow-5">
+                        <button
+                          type="button"
+                          class="btn btn-outline-info mr-2 dropdown-toggle mt-2"
+                          data-ripple-color="dark"
+                          id="path-finding-grp-btn"
+                          data-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Algorithms
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" id="bfs">BFS</a></li>
+                          <li><a class="dropdown-item" id="bidirectional-bfs">Bidirectional BFS</a></li>
+                          <li><a class="dropdown-item" id="dijkstra">Dijkstra (UCS)</a></li>
+                          <li><a class="dropdown-item" id="bidirectional-dijkstra">Bidirectional Dijkstra (UCS)</a></li>
+                          <li><a class="dropdown-item" id="astar">A* (Manhattan Distance)</a></li>
+                          <li><a class="dropdown-item" id="bidirectional-astar">Bidirectional A*</a></li>
+                          <li><a class="dropdown-item" id="greedybest">Greedy Best-first (Manhattan Distance)</a></li>
+                          <li><a class="dropdown-item" id="bidirectional-greedy-bfs">Bidirectional Greedy Best-first</a></li>
+                          <li><a class="dropdown-item" id="dfs">DFS</a></li>
+                        </ul>
+                      </div>
+
+
+                      <li class="nav-item" >
+                        <button
+                          type="button"
+                          class="btn btn-outline-danger mr-2 ml-1 mt-2"
+                          data-ripple-color="light"
+                          id="maze-prim-animation"
+                          >
+                            Maze Prim's Algorithm
+                        </button>
+                      </li>
+
+                      <li class="nav-item" >
+                        <button
+                          type="button"
+                          class="btn btn-outline-danger mr-2 ml-1 mt-2"
+                          data-ripple-color="light"
+                          id="maze-animation-recursive-backtracker"
+                          >
+                            Maze Recurisve Backtracker
+                        </button>
+                      </li>
+
+
+
+                      <li class="nav-item" >
+                        <button
+                          disabled
+                          type="button"
+                          class="btn btn-outline-danger mr-2 ml-1 mt-2"
+                          data-ripple-color="light"
+                          id="visualize"
+                          >
+                            Visualize
+                        </button>
+                      </li>
+                      <li class="nav-item">
+                        <button id="clear-path" disabled type="button" class="btn btn-outline-warning mr-2 ml-1 mt-2" data-ripple-color="light">
+                            Clear Path
+                        </button>
+                      </li>
+                      <li class="nav-item">
+                        <button id="clear" disabled type="button" class="btn btn-outline-warning mr-2 ml-1 mt-2" data-ripple-color="light">
+                            Clear Board
+                        </button>
+                      </li>
+                    </ul>
+
+                  </div>
+                  <!-- Collapsible wrapper -->
+                </div>
+                <!-- Container wrapper -->
+                </nav>
+              </header>
+
+              <main>
+                <section id="grid-container">
+                </section>
+              </main>
+        </div>
+
+
+        <!-- Tabs content -->
+        <div id="shortcut-toast" class="toast bg-info text-white" role="alert" aria-live="assertive"
+           aria-atomic="true" data-autohide="false" data-content="11000">
+          <div class="toast-header bg-info text-white">
+            <i class="fas fa-info-circle fa-lg mr-2"></i>
+            <strong class="mr-auto">Path-Finder</strong>
+          </div>
+          <div class="toast-body">
+            <b><u>Click/Hover</u></b> on icons to see <u><b>Shortcuts</u></b>
+          </div>
+        </div>
+        
+        <div id="info-toast" class="toast bg-success text-white" role="alert" aria-live="assertive"
+  aria-atomic="true" data-autohide="false">
+          <div class="toast-header bg-success text-white">
+            <i class="fas fa-info-circle fa-lg mr-2"></i>
+            <strong class="mr-auto">Path-Finder</strong>
+            <button type="button" class="ml-2 my-1 close text-white" data-dismiss="toast"
+              aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="toast-body">
+            You can <b><u>Drag</u></b> <b>Start</b> or <b>End</b> to see how path is affected in realtime
+          </div>
+        </div>
+        <!-- Danger toast -->
+        <div id="fail-toast" class="toast bg-danger text-white" data-autohide="false" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header bg-danger text-white">
+            <i class="fas fa-exclamation-triangle fa-lg mr-2"></i>
+            <strong class="mr-auto">Path-Finder</strong>
+            <button type="button" class="ml-2 my-1 close text-white" data-dismiss="toast" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="toast-body">
+            Sorry, I wasn't able to find End Node
+          </div>
+        </div>
+
+ </body>
+</html>
